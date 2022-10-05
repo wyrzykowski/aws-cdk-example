@@ -1,9 +1,12 @@
 const AWS = require("aws-sdk");
 const S3 = new AWS.S3();
+var _ = require('lodash');
 
 const bucketName = process.env.BUCKET;
 
 exports.main = async function (event, context) {
+  const res = _.chunk(['a', 'b', 'c', 'd'], 2);
+  console.log('res', res)
   try {
     console.log("Entering Lambda!");
     console.log("event", JSON.stringify(event));
