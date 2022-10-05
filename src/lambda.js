@@ -12,6 +12,9 @@ exports.main = async function (event, context) {
     console.log("event", JSON.stringify(event));
     console.log("context", JSON.stringify(context));
     const data = await S3.listObjectsV2({ Bucket: bucketName }).promise();
+    
+    
+    throw new Error("hello")
     console.log(data);
   } catch (error) {
     return {
