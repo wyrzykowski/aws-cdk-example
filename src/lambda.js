@@ -1,6 +1,9 @@
+//# sourceMappingURL=index.js.map
+
 const AWS = require("aws-sdk");
 const S3 = new AWS.S3();
 var _ = require('lodash');
+require('source-map-support').install();
 
 const bucketName = process.env.BUCKET;
 
