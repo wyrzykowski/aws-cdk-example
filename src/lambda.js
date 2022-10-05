@@ -7,6 +7,9 @@ const bucketName = process.env.BUCKET;
 exports.main = async function (event, context) {
   const res = _.chunk(['a', 'b', 'c', 'd'], 2);
   console.log('res', res)
+  
+   throw new Error("Example error here")
+  
   try {
     console.log("Entering Lambda!");
     console.log("event", JSON.stringify(event));
@@ -14,7 +17,7 @@ exports.main = async function (event, context) {
     const data = await S3.listObjectsV2({ Bucket: bucketName }).promise();
     
     
-    throw new Error("hello")
+
     console.log(data);
   } catch (error) {
     return {
